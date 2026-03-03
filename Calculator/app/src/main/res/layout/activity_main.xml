@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <!-- Display Area -->
+    <ScrollView
+        android:id="@+id/scrollDisplay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/display_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/display"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="end|center_vertical"
+                android:textSize="34sp"
+                android:padding="24dp"
+                android:maxLines="5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnCopy"
+                tools:text="1234567890"/>
+
+            <ImageButton
+                android:id="@+id/btnCopy"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_copy"
+                app:layout_constraintTop_toTopOf="@id/display"
+                app:layout_constraintBottom_toBottomOf="@id/display"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <!-- Button Grid -->
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/buttonGrid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintWidth_percent="1.0"
+        app:columnCount="4"
+        app:rowCount="6"
+        android:padding="8dp"
+        app:useDefaultMargins="true"
+        app:alignmentMode="alignBounds"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Row 1 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClear"
+            style="@style/OperatorButton"
+            android:text="C"
+            app:backgroundTint="@color/red_200"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDivide"
+            style="@style/OperatorButton"
+            android:text="/"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMultiply"
+            style="@style/OperatorButton"
+            android:text="×"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubtract"
+            style="@style/OperatorButton"
+            android:text="-"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"/>
+
+        <!-- Row 2 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn7"
+            style="@style/NumberButton"
+            android:text="7"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn8"
+            style="@style/NumberButton"
+            android:text="8"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn9"
+            style="@style/NumberButton"
+            android:text="9"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdd"
+            style="@style/OperatorButton"
+            android:text="+"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"/>
+
+        <!-- Row 3 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn4"
+            style="@style/NumberButton"
+            android:text="4"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn5"
+            style="@style/NumberButton"
+            android:text="5"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn6"
+            style="@style/NumberButton"
+            android:text="6"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEquals"
+            android:text="="
+            style="@style/EqualButton"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            app:layout_rowSpan="2"/>
+
+        <!-- Row 4 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn1"
+            style="@style/NumberButton"
+            android:text="1"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn2"
+            style="@style/NumberButton"
+            android:text="2"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn3"
+            style="@style/NumberButton"
+            android:text="3"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"/>
+
+        <!-- Row 5 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn0"
+            style="@style/NumberButton"
+            android:text="0"
+            app:layout_columnWeight="2"
+            app:layout_rowWeight="1"
+            app:layout_columnSpan="2"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDot"
+            style="@style/NumberButton"
+            android:text="."
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"/>
+
+        <ImageButton
+            android:id="@+id/btnSettings"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_settings"
+            app:layout_column="2"
+
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:layout_margin="8dp"/>
+        <ImageButton
+            android:id="@+id/btnHistory"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_history"
+            app:layout_column="3"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            app:layout_constraintEnd_toStartOf="@id/btnSettings"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="8dp"/>
+    </androidx.gridlayout.widget.GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
