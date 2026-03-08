@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="calc_button_color">#fac234</color>
+    <color name="memory_button">#379eb8</color>
+    <color name="clear_button">#f55240</color>
+    <color name="operation_button">#ff9f38</color>
+    <color name="background">#2e2d2d</color>
+    <color name="input">#575656</color>
+    <color name="gray">#828282</color>
+    <color name="backgroundColor">#F5F5F5</color>
+    <color name="textColor">#333333</color>
+    <color name="hintColor">#888888</color>
+    <color name="gray2">#DDDDDD</color>
+    <color name="buttonColor">#6200EE</color>
+    <color name="buttonPressedColor">#3700B3</color>
+    <color name="buttonSecondaryColor">#03DAC5</color>
+    <color name="buttonSecondaryPressedColor">#018786</color>
+
+</resources>

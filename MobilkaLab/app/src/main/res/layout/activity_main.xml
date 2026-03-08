@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:id="@+id/layout">
+
+    <TextView
+        android:id="@+id/debug"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+
+        android:textSize="24sp"
+        android:text="Память: 0"
+        android:textColor="@color/gray"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="4"
+        android:orientation="horizontal">
+
+        <!--<EditText
+            android:id="@+id/inputField"
+            android:background="@color/input"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:layout_columnSpan="3"
+            android:hint="Введите выражение"
+            android:inputType="none"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textSize="24sp" />-->
+        <EditText
+            android:id="@+id/inputField"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:layout_columnSpan="4"
+            android:hint="Введите выражение"
+            android:inputType="none"
+            android:padding="12dp"
+            android:textSize="24sp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:cursorVisible="false"
+            android:longClickable="false"
+            style="@style/EditText"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/voiceBtn"
+            style="@style/CalcButton"
+            android:layout_columnSpan="1"
+            android:text="🎤" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShowHistory"
+            android:text="Hist"
+            style="@style/CalcButton"
+            android:layout_columnSpan="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnChangePass"
+            android:text="pass"
+            style="@style/CalcButton"
+            android:layout_columnSpan="1"/>
+
+        <Switch
+            android:id="@+id/themeSwitch"
+            android:text="Тема"
+            android:textSize="12sp"
+            android:textColor="@color/gray"
+            android:layout_columnSpan="1"
+            android:layout_gravity="center_vertical"
+            style="@style/EditText"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonMemoryPlus"
+            style="@style/CalcButton"
+            android:text="M+" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonMemoryMinus"
+            style="@style/CalcButton"
+            android:text="M-" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonMemoryRecall"
+            style="@style/CalcButton"
+            android:text="MR" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonMemoryClear"
+            style="@style/CalcButton"
+            android:text="MC" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonClear"
+            style="@style/CalcButton"
+            android:layout_height="wrap_content"
+            android:text="AC" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonLeftBracket"
+            style="@style/CalcButton"
+            android:text="(" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonRightBracket"
+            style="@style/CalcButton"
+            android:text=")" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonDelete"
+            style="@style/CalcButton"
+            android:text="←" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSin"
+            style="@style/CalcButton"
+            android:text="sin" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonCos"
+            style="@style/CalcButton"
+            android:text="cos" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonTan"
+            style="@style/CalcButton"
+            android:text="tan" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSqrt"
+            style="@style/CalcButton"
+            android:text="sqrt" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button7"
+            style="@style/CalcButton"
+            android:text="7" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button8"
+            style="@style/CalcButton"
+            android:text="8" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button9"
+            style="@style/CalcButton"
+            android:text="9" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonDivide"
+            style="@style/CalcButton"
+            android:text="/" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button4"
+            style="@style/CalcButton"
+            android:text="4" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button5"
+            style="@style/CalcButton"
+            android:text="5" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button6"
+            style="@style/CalcButton"
+            android:text="6" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonMultiply"
+            style="@style/CalcButton"
+            android:text="*" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button1"
+            style="@style/CalcButton"
+            android:text="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button2"
+            style="@style/CalcButton"
+            android:text="2" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button3"
+            style="@style/CalcButton"
+            android:text="3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonMinus"
+            style="@style/CalcButton"
+            android:text="-" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button0"
+            style="@style/CalcButton"
+            android:text="0" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonDot"
+            style="@style/CalcButton"
+            android:text="." />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonEqual"
+            style="@style/CalcButton"
+            android:text="=" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonPlus"
+            style="@style/CalcButton"
+            android:text="+" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonInverse"
+            style="@style/CalcButton"
+            android:text="1/x" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonReverse"
+            style="@style/CalcButton"
+            android:text="-/+" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonPower"
+            style="@style/CalcButton"
+            android:text="^" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonModul"
+            style="@style/CalcButton"
+            android:text="|X|" />
+    </GridLayout>
+
+</LinearLayout>
