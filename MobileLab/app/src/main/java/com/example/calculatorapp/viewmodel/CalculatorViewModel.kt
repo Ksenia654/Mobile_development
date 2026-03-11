@@ -9,6 +9,7 @@ import com.example.calculatorapp.model.Memory
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlin.math.sqrt
 import kotlin.math.abs
+import java.util.Locale
 
 class CalculatorViewModel : ViewModel() {
 
@@ -83,12 +84,20 @@ class CalculatorViewModel : ViewModel() {
 
     fun applySqrt(expression: String): String {
         return try {
-            val result = sqrt((Calculator.evaluate(expression)?.toDoubleOrNull() ?: Double.NaN))
-            if (result.isNaN()) throw Exception("Not a Number")
-            saveCalculation("sqrt(" + expression, result.toString())
-            _result.value = result.toString()
-            result.toString()
+            val value = Calculator.evaluate(expression)?.toDoubleOrNull() ?: Double.NaN
+            val result = sqrt(value)
+
+            if (result.isNaN()) {
+                _result.value = "Ошибка"
+                return "Ошибка"
+            }
+
+            val formatted = String.format(Locale.US, "%.1f", result)
+            saveCalculation("sqrt($expression)", formatted)
+            _result.value = formatted
+            formatted
         } catch (e: Exception) {
+            _result.value = "Ошибка"
             "Ошибка"
         }
     }

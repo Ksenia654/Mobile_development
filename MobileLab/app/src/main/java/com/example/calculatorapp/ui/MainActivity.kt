@@ -320,8 +320,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Demo version: доступен только обычный режим", Toast.LENGTH_SHORT).show()
             } else {
                 if (resources.configuration.orientation != Configuration.ORIENTATION_LANDSCAPE) {
-                    isScientificMode = !isScientificMode
-                    updateCalculatorMode()
+
                 } else {
                     if (!isScientificMode) {
                         isScientificMode = true
