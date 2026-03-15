@@ -72,6 +72,5 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.7.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.security:security-crypto:1.0.0")
-
     implementation("androidx.biometric:biometric:1.2.0-alpha05")
 }
