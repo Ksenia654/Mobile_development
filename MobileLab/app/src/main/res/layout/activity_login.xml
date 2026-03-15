@@ -42,4 +42,14 @@
         android:textSize="16sp"
         android:layout_marginTop="8dp"/>
 
+    <Button
+            android:id="@+id/faceIdButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Войти по Face ID"
+            android:background="@drawable/custom_button_secondary"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"/>
+
 </LinearLayout>

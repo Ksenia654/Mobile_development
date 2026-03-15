@@ -36,6 +36,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.messaging.FirebaseMessaging
 import com.example.calculatorapp.utils.NotificationHelper
+import androidx.biometric.BiometricManager
+import androidx.biometric.BiometricPrompt
 
 private val REQUEST_RECORD_AUDIO_PERMISSION = 200
 
@@ -585,4 +587,5 @@ class MainActivity : AppCompatActivity() {
             inputField.setText(text.dropLast(1))
         }
     }
+
 }
