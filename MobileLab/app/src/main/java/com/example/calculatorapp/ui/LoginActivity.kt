@@ -32,6 +32,11 @@ class LoginActivity : AppCompatActivity() {
 
             if (enteredPassword == savedPassword) {
                 Toast.makeText(this, "Доступ предоставлен", Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("loggedIn", true)
+                startActivity(intent)
+
                 finish()
             } else {
                 Toast.makeText(this, "Неверный пароль", Toast.LENGTH_SHORT).show()

@@ -35,6 +35,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.messaging.FirebaseMessaging
+import com.example.calculatorapp.utils.NotificationHelper
 
 private val REQUEST_RECORD_AUDIO_PERMISSION = 200
 
@@ -96,14 +97,22 @@ class MainActivity : AppCompatActivity() {
         isUserLoggedIn = savedInstanceState?.getBoolean("isUserLoggedIn", false) ?: false
         passwordManager = PasswordManager(this)
 
+// 1. Проверяем, пришёл ли флаг успешного входа
+        val loggedIn = intent.getBooleanExtra("loggedIn", false)
+        if (loggedIn) {
+            onUserLoggedIn()
+        }
+
+// 2. Если пользователь НЕ вошёл — отправляем на логин
         if (!isUserLoggedIn) {
             if (!passwordManager.isPasswordSet()) {
                 val intent = Intent(this, SetPasswordActivity::class.java)
                 startActivity(intent)
+                finish()
             } else {
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
-                onUserLoggedIn()
+                finish()
             }
         }
     }
@@ -143,7 +152,15 @@ class MainActivity : AppCompatActivity() {
 
     fun onUserLoggedIn() {
         isUserLoggedIn = true
+
+        NotificationHelper.send(
+            this,
+            "Добро пожаловать!",
+            "Облачное хранение активно.",
+            100
+        )
     }
+
 
     private fun showHistoryBottomSheet() {
         val dialog = BottomSheetDialog(this)
@@ -546,10 +563,21 @@ class MainActivity : AppCompatActivity() {
         viewModel.result.observe(this) { result ->
             inputField.setText(result)
         }
+
         viewModel.memory.observe(this) { memory ->
             debug.text = "Память: $memory"
         }
+
+        viewModel.error.observe(this) { errorMessage ->
+            NotificationHelper.send(
+                this,
+                "Ошибка",
+                errorMessage,
+                201
+            )
+        }
     }
+
 
     private fun deleteLastCharacter() {
         val text = inputField.text.toString()
